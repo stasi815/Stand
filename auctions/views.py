@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 
 from .models import Auction, Item, Organization
-from auctions.forms import AuctionsForm
+from auctions.forms import AuctionsForm, ItemForm
 
 
 # def index(request):
@@ -65,3 +65,25 @@ class AuctionDeleteView(DeleteView):
 
     def get(self, *args, **kwargs):
         return self.delete(*args, **kwargs)
+
+class ItemDetailView(DetailView):
+    model = Item
+    
+    def get(self, request, slug):
+        """ Returns a specific item page by slug. """
+        item = self.get_queryset().get(slug__iexact=slug)
+        return render(request, 'auctions/item_details.html', {
+            'item': item
+        })    
+class ItemCreateView(CreateView):
+    """ Renders a form for creating a new item. """
+    def get(self, request, *args, **kwargs):
+        context = {'form': ItemForm()}
+        return render(request, 'auctions/new_item.html', context)
+
+    def post(self, request, *args, **kwargs):
+        form = ItemForm(request.POST, request.FILES)
+        if form.is_valid():
+            item = form.save()
+            return HttpResponseRedirect(reverse_lazy('item-details-page', args=[item.slug]))
+        return render(request, 'auctions/new_item.html', {'form':form})

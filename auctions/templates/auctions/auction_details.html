@@ -9,7 +9,7 @@
       <hr>
       <p>Start Date and Time: {{ auction.start_date|linebreaksbr }}</p>
       <p>Auction Close Date and Time: {{ auction.end_date|linebreaksbr }}</p>
-      <p>Auction Items: {{ auction.items|linebreaksbr }}</p>
+
       <a href="{% url 'auctions-list-page' %}">Back to List</a><hr>
       {% if user.is_authenticated %}
         <a href= "{% url 'auction-update-page' auction.slug %}">Edit</a><hr>

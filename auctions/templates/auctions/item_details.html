@@ -1,0 +1,20 @@
+{% extends 'auctions/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="row">
+    <div class="col m-4">
+      <h3>{{ item.name }}</h3>
+      <hr>
+      <p>Description: {{ item.description|linebreaksbr }}</p>
+      <hr>
+      <p>Starting Bid: {{ item.starting_bid|linebreaksbr }}</p>
+      <p>Minimun Bid Increment: {{ item.min_bid_increment|linebreaksbr }}</p>
+      <p>Item Value: {{ item.value|linebreaksbr }}</p>
+      <p>Current Highest Bid: {{ item.current_bid|linebreaksbr }}</p>
+      <p>{{ item.image|linebreaksbr }}</p>
+      <a href="{% url 'auctions-list-page' %}">Back to List</a><hr>
+    </div>
+  </div>
+
+{% endblock %}
