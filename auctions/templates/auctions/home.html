@@ -6,16 +6,25 @@
         <h1 class="display-3">Stand</h1>
         <p class="lead lead1">Create a silent auction to support your cause!</p>
         <hr class="my-4">
+        {% if not user.is_authenticated %}
         <p class="lead1">Sign Up/Log in to edit auctions and add items.</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            <a class="btn btn-info btn-lg" href="{% url 'login' %}" role="button">Log In</a>
+            <a class="btn btn-warning btn-lg" href="{% url 'signup-form' %}" role="button">Sign Up</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <p class="lead1">Create a new auction or item!</p>
+        <p class="lead">
+            <a class="btn btn-info btn-lg" href="{% url 'new-auction-page' %}" role="button">New Auction</a>
+            <a class="btn btn-warning btn-lg" href="{% url 'new-item-page' %}" role="button">New Item</a>
+        {% endif %}
         </p>
     </div>
 <div class="container">
     <h1>Active Auctions</h1>
 <ul>
     {% for auction in auctions %}
-        <li><a href="{% url 'auction-details-page' auction.slug %}">{{ auction.name }}</a></li>
+        <li><a href="{% url 'auction-details-page' auction.slug %}">{{ auction.name|capfirst }}</a></li>
     {% endfor %}
 </ul>
 </div>
