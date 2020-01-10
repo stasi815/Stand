@@ -1,9 +1,14 @@
 {% extends 'auctions/base.html' %}
+{% load static %}
 
 {% block content %}
 <div class='container'>
     <div class='row mt-5'>
+     <div class='formfield'>
+        <center><h3>Add a new auction item by filling in all of the essential details: </h3></center>
+        <center><p><img src='{% static '/auctions/images/new_item.jpg' %}' width='700' height='300'></p></center>
         {% include 'partials/form.html' %}
     </div>
+</div>
 </div>
 {% endblock %}
