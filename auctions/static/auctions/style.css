@@ -1,7 +1,13 @@
 .jumbotron {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     color: white;
+}
+
+.lead1{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+
 }

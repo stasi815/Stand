@@ -48,3 +48,20 @@ class AuctionCreateView(CreateView):
             auction = form.save()
             return HttpResponseRedirect(reverse_lazy('auction-details-page', args=[auction.slug]))
         return render(request, 'auctions/new_auction.html', {'form':form})
+
+class AuctionEditView(UpdateView):
+    """ Renders a form for editing an auction. """
+    model = Auction
+    template_name = 'auctions/auction_edit.html'
+    form_class = AuctionsForm
+
+    def get_success_url(self):
+        return reverse('auction-details-page', kwargs={'slug':self.object.slug,})
+
+class AuctionDeleteView(DeleteView):
+    """ Renders deletion of an auction. """
+    model = Auction
+    success_url = reverse_lazy('auctions-list-page')
+
+    def get(self, *args, **kwargs):
+        return self.delete(*args, **kwargs)
