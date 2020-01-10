@@ -28,8 +28,6 @@ class AuctionsList(ListView):
 
 class AuctionDetailView(DetailView):
     model = Auction
-    template_name = 'auctions/auction_details.html'
-    context_object_name = 'auction'
     
     def get(self, request, slug):
         """ Returns a specific auction page by slug. """

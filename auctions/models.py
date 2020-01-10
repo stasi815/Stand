@@ -31,7 +31,7 @@ class Auction(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        """ Returns a fully-qualified path for a page (/my-new-auction-page). """
+        """ Returns a fully-qualified path for a page (/new-auction-page). """
         path_components = {'slug': self.slug}
         return reverse("auction-details-page", kwargs=path_components)
 

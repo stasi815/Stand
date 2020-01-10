@@ -123,6 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+     os.path.join(BASE_DIR, "static"),
+ ]
+
 # Auctions app settings
 AUCTION_NAME_MAX_LENGTH = 600
 

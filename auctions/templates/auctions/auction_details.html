@@ -1,11 +1,15 @@
 {% extends 'auctions/base.html' %}
 
 {% block content %}
-<!-- 
-    <ul>
-        {% for item in items %}
-            <li><a href='{{ item.slug }}'>{{ item.name }}</a></li>
-        {% endfor %}
-    </ul> -->
+  <div class="row">
+    <div class="col m-4">
+      <h3>{{ auction.name }}</h3>
+      <hr>
+      <p>{{ auction.description|linebreaksbr }}</p>
+      <hr>
+      <a href="{% url 'auctions-list-page' %}">Back to List</a><hr>
+
+    </div>
+  </div>
 
 {% endblock %}
