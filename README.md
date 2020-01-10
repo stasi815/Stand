@@ -4,7 +4,7 @@
 
 [Heroku]: https://img.shields.io/badge/heroku-deployed-brightgreen?style=flat-square
 
-[![Generic badge](https://img.shields.io/badge/django-v.3.0.2-green.svg)](https://shields.io/)
+[django]: https://img.shields.io/badge/django-v.3.0.2-green.svg)(https://shields.io/)
 
 [![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
 
