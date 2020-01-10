@@ -25,7 +25,7 @@ SECRET_KEY = '5kf%u&+kn36&=8f$t)oaid6(ok0&x^-j^ke5+to6g_6=v5fu)w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'stand-amg.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','127.0.0.1', 'stand-amg.herokuapp.com']
 
 
 # Application definition
@@ -134,4 +134,7 @@ AUCTION_NAME_MAX_LENGTH = 600
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Required for Heroku
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
