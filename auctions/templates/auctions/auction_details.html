@@ -1,4 +1,5 @@
 {% extends 'auctions/base.html' %}
+{% load static %}
 
 {% block content %}
   <div class="row">
@@ -9,8 +10,6 @@
       <hr>
       <p>Start Date and Time: {{ auction.start_date|linebreaksbr }}</p>
       <p>Auction Close Date and Time: {{ auction.end_date|linebreaksbr }}</p>
-      <p>Auction Item: {{ auction.item|linebreaksbr }}</p>
-
 
       <a href="{% url 'auctions-list-page' %}">Back to List</a><hr>
       {% if user.is_authenticated %}

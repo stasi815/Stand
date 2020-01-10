@@ -12,7 +12,7 @@
       <p>Minimun Bid Increment: {{ item.min_bid_increment|linebreaksbr }}</p>
       <p>Item Value: {{ item.value|linebreaksbr }}</p>
       <p>Current Highest Bid: {{ item.current_bid|linebreaksbr }}</p>
-      <p>{{ item.image|linebreaksbr }}</p>
+      <p><img src="{{ item.image.url|linebreaksbr }}" alt="{{ item.name }}" width='300' height='300'></p>
       <a href="{% url 'auctions-list-page' %}">Back to List</a><hr>
     </div>
   </div>

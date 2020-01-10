@@ -136,5 +136,12 @@ LOGOUT_REDIRECT_URL = "/"
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+# MEDIA_ROOT = '/Users/makeschoolloaner/dev/stand/media'
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 # Required for Heroku
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
